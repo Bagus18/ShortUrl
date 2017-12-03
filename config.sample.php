@@ -16,3 +16,4 @@ define('INDIRECTLYGO','0'); // Wait before jump go "1 = active"
 define('GOTIME','10');	// This second for wait
 error_reporting(E_ALL); // Just report for you if got error
 $_ERROR = array();
+?>
