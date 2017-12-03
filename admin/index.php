@@ -52,12 +52,12 @@ $db_result = mysql_query("SELECT * FROM ".DB_PREFIX."urls WHERE $db_query ORDER 
 echo "<table  border=\"0\" cellpadding=\"0\" cellspacing=\"0\" id=\"url_list\">\n"."<thead>";
     echo "<tr>\n".
          "<th style=\"border-radius: 4px 0 0 0;\">ID</th>\n".
-         "<th>短代码</th>\n".
-         "<th>别名</th>\n".
-         "<th>原网址</th>\n".
-         "<th>添加日期</th>\n".
-         "<th>次数</th>\n".
-         "<th style=\"border-radius: 0 4px 0 0;\">操作</th>\n".
+         "<th>Short code</th>\n".
+         "<th>Alias</th>\n".
+         "<th>The original URL</th>\n".
+         "<th>Add the date</th>\n".
+         "<th>frequency</th>\n".
+         "<th style=\"border-radius: 0 4px 0 0;\">operating</th>\n".
 	  "</tr>\n";
 echo "</thead>";
 while ($db_row = mysql_fetch_assoc($db_result)) {
@@ -81,7 +81,7 @@ while ($db_row = mysql_fetch_assoc($db_result)) {
          "<td><a href=\"" . htmlentities($u_url) . "\" target=\"_blank\">". htmlentities($u_url)."</a></td>\n".
          "<td>$u_date_added</td>\n".
          "<td>".$st."</td>\n".
-         "<td><a class='del' href=\"javascript:delete_url($u_id);\">删除</a><a class =\"update\" href=\"index.php?old_id=".$u_id."\">修改</a></td>\n".
+         "<td><a class='del' href=\"javascript:delete_url($u_id);\">Delete</a><a class =\"update\" href=\"index.php?old_id=".$u_id."\">Modify</a></td>\n".
          "</tr>\n";
 unset($u_id, $u_code, $u_alias, $u_url, $u_date_added);
 }
@@ -92,11 +92,11 @@ if ($db_count > 25) {
     echo "<p>\n";
 
     if ($page > 1) {
-        echo "<a href=\"index.php?page=".($page - 1)."\">&laquo; 上一页</a> ";
+        echo "<a href=\"index.php?page=".($page - 1)."\">&laquo; Previous</a> ";
     }
 
     if ($page < $db_pages) {
-        echo "<a href=\"index.php?page=".($page + 1)."\">下一页 &raquo;</a>";
+        echo "<a href=\"index.php?page=".($page + 1)."\">Next &raquo;</a>";
     }
 
     echo "</p>\n";

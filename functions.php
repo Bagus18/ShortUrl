@@ -1,10 +1,10 @@
 <?php
 function db_die($filename, $line, $message) {
-    die("文件: $filename<br />行: $line<br />信息: $message");
+    die("File: $filename<br />: $line<br />Info: $message");
 }
 
 function db_ins_die($filename, $line, $message) {
-    die('<p style="color:red;">安装向导无法连接到使用指定的证书数据库。请返回再试一次。</p>');
+    die('<p style="color:red;">Setup Wizard can\'t connect to the specified certificate database. Please go back and try again.</p>');
 }
 
 function db_connect() {

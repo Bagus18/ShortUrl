@@ -1,10 +1,10 @@
 function delete_url(id) {
-    if (confirm('你确定要删除这条记录吗？')) {
+    if (confirm('Are you sure you want to delete this record?')) {
         document.location = 'index.php?delete_id=' + id;
     }
 }
 function update_url(id) {
-    if (confirm('你确定要更改这条记录吗？')) {
+    if (confirm('Are you sure you want to change this record?')) {
         document.location = 'update?id=' + id;
     }
 }

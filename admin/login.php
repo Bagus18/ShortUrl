@@ -5,11 +5,11 @@ require_once("../functions.php");
 if (is_admin_login()) {header("Location: index.php", true, 301);exit();}
 if (@$_POST['user']) {
 	if ($_POST['user'] <> ADMIN_USERNAME) {
-		echo "<script>alert('账号不正确，请重新输入!');</script>";
+		echo "<script>alert('Account is incorrect, please re-enter!');</script>";
 	}elseif ($_POST['password'] <> ADMIN_PASSWORD) {
-		echo "<script>alert('密码不正确，请重新输入!');</script>";
+		echo "<script>alert('The password is incorrect, please re-enter!');</script>";
 	}else{
-		echo "<script>alert('登陆成功，正在重定向...');";
+		echo "<script>alert('Login successful, is redirecting ...');";
 		//echo session_id();
 		$_SESSION['admin'] = 1;
 		echo "document.location = 'index.php';</script>";
@@ -19,7 +19,7 @@ if (@$_POST['user']) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>登录 - Administrator</title>
+	<title><?php echo SITE_TITLE; ?> | Administrator</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style type="text/css">
 		.container{
@@ -79,10 +79,10 @@ if (@$_POST['user']) {
 <body>
 <section class="container">
 	<form class="login" method="post">
-		<h2>Administrator 登录</h2>
-		<input type="text" placeholder="用户名" name="user" value="<?php echo @$_POST['user'] ?>">
-		<input type="password" placeholder="密码" name="password">
-		<button>登录</button>
+		<h2>Login</h2>
+		<input type="text" placeholder="Username" name="user" value="<?php echo @$_POST['user'] ?>">
+		<input type="password" placeholder="Password" name="password">
+		<button>OK</button>
 	</form>
 </section>
 </body>

@@ -4,7 +4,7 @@ ini_set('display_errors', 0);
 $prefix[0] = '';
 $filename = 'install';
 if (is_dir($filename)) {
-    die ("要让ShortUrl运作起来，你需要使用 <a href=\"install\">安装向导</a> ，这将帮助你在瞬间建立起新的网址缩短服务。<br/><br/>如果你已经安装了ShortUrl，你需要删除“install”目录。");
+    die ("For ShortUrl Working，You need read <a href=\"install\">installation guide</a> ，This will help you to quickly create a new URL shortening service.<br/><br/>If you have already installed ShortUrl，You need to delete “install” table of contents.");
 } //安装向导还未启用
 ?>
 <?php
@@ -40,10 +40,10 @@ if (count($_GET) > 0) {
 			$data['host'] = 'none';
 		}
     if (strlen($url) == 0) {
-        $_ERROR[] = "<p class=error>请输入一个真实链接.</p>";
+        $_ERROR[] = "<p class=error>Please enter a real link.</p>";
     }
     else if (empty($data['scheme']) || empty($data['host'])) {
-        $_ERROR[] = "<p class=error>请输入一个有效的链接.</p>";
+        $_ERROR[] = "<p class=error>Please enter a valid link.</p>";
     }
     else {
         $hostname = get_hostname();
@@ -56,10 +56,10 @@ if (count($_GET) > 0) {
 
     if (strlen($alias) > 0) {
         if (!preg_match("/^[a-zA-Z0-9_-]+$/", $alias)) {
-            $_ERROR[] = "<p class=error>自定义别名只能包含字母，数字，下划线和破折号.</p>";
+            $_ERROR[] = "<p class=error>Custom aliases can only contain letters, numbers, underscores, and dashes.</p>";
         }
         else if (code_exists($alias) || alias_exists($alias)) {
-            $_ERROR[] = "<p class=error>您输入的自定义代码已经存在.</p>";
+            $_ERROR[] = "<p class=error>The custom code you entered already exists.</p>";
         }
     }
 
@@ -104,8 +104,8 @@ if (count($_GET) > 0) {
         $short_url = SITE_URL."/".$code;
         $_GET['url']   = "";
         $_GET['alias'] = "";
-        //$info = "<p class=info>短地址创建成功！新地址：<strong><a href=\"http://".htmlentities($short_url) ."\" target=\"_blank\">".htmlentities($short_url)."</a></strong> </p>";
-        $info = "<p class=info>短地址创建成功！新地址：<strong><a href=\"".htmlentities($short_url) ."\" target=\"_blank\">".htmlentities($short_url)."</a></strong> </p>";
+        //$info = "<p class=info>Short address created successfully! new address：<strong><a href=\"http://".htmlentities($short_url) ."\" target=\"_blank\">".htmlentities($short_url)."</a></strong> </p>";
+        $info = "<p class=info>Short address created successfully! new address：<strong><a href=\"".htmlentities($short_url) ."\" target=\"_blank\">".htmlentities($short_url)."</a></strong> </p>";
         require_once("html/index.php");
         exit();
     }

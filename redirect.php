@@ -16,7 +16,7 @@ if(INDIRECTLYGO==1){
         
         header("refresh:".GOTIME.";url=".$url."");
 	       //include './ad.php';  //需要加载的页面地址
-        echo "<br><a href=\"".$url."\">点击直接进入</a>";
+        echo "<br><a href=\"".$url."\">Click to enter directly</a>";
         exit();
         
         }

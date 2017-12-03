@@ -12,7 +12,7 @@ ini_set('display_errors', 0);
 	<meta charset="UTF-8">
 	<style type="text/css">
         body{
-            font-family:微软雅黑,arial;
+            font-family:sans-serif;
         }
         a{
 			text-decoration: none;
@@ -59,6 +59,7 @@ ini_set('display_errors', 0);
 			border:0;
 			color: #fff;
 			font-weight: bold;
+			cursor: pointer;
 		}
 		button:hover{
 			background-color: #4169E1;
@@ -98,17 +99,17 @@ ini_set('display_errors', 0);
 	<form class="login" method="get">
 		
 		<h2><?php echo SITE_TITLE; ?></h2>
-		<p>原始链接</p>
-		<input type="text" placeholder="例如：https://demo.domain.org" name="url" value="<?php echo @$_GET['url']; ?>">
-		<p>自定义后缀</p>
-		<input type="text" placeholder="例如：domain" name="alias">
-		<button type="submit">创建</button><button type="reset">重置</button>
+		<p>Original link</p>
+		<input type="text" placeholder="E.g：https://demo.domain.org" name="url" value="<?php echo @$_GET['url']; ?>">
+		<p>Custom suffix</p>
+		<input type="text" placeholder="E.g：domain" name="alias">
+		<button type="submit">Create</button><button type="reset">Reset</button>
 		<?php print_errors() ?>
 		<?php echo @$info; ?>
 	</form>
 </section>
 <footer>
-	<p>Copyright © <?php echo date('Y'); ?> <a href="https://team.moe-girl.co">Moe-Girl Team</a> , All Rights Reserved.</p>
+	<!--<p>Copyright © <?php echo date('Y'); ?> <a href="https://team.moe-girl.co">Moe-Girl Team</a> , All Rights Reserved.</p>-->
 </footer>
 </body>
 </html>
