@@ -4,7 +4,7 @@ define('DB_USERNAME', ''); //MySQL Username
 define('DB_PASSWORD', ''); //MySQL Password
 define('DB_NAME', ''); // Database Name
 define('DB_VERSION', '4');// Database Version
-define('DB_PREFIX', 'shorturl_'); // Database table prefix
+define('DB_PREFIX', 'shorturl_'); // Database table prefix nb: if you edit this prefix please edit also database.sql before import!
 define('SITE_URL', 'https://demo.domain.org'); // Your short url, don't use "/"
 define('SITE_TITLE', 'ShortUrl'); // Title
 define('ADMIN_USERNAME', 'admin'); // Admin username for control panel
